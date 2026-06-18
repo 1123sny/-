@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>志愿盲盒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            font-family: "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+            padding: 15px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* 标题区域 */
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-top: 20px;
+        }
+
+        .main-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: 6px;
+            margin-bottom: 8px;
+        }
+
+        .sub-title {
+            font-size: 13px;
+            color: #888;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        /* 顶部大横幅图片展示区 */
+        .top-banner {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #1a1a1a;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .top-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 中间区域：左侧小图 + 右侧长条 */
+        .middle-section {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .left-small-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .small-image-item {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 11px;
+            overflow: hidden;
+        }
+
+        .small-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .right-long-image {
+            width: 140px;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        .right-long-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 底部文字展示区 */
+        .bottom-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .text-card {
+            width: 100%;
+            padding: 18px 20px;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            color: #fff;
+        }
+
+        .text-card .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .text-card .card-desc {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 20px 0 30px;
+            color: #bbb;
+            font-size: 11px;
+        }
+
+        /* 占位符文字样式 */
+        .placeholder-text {
+            color: #444;
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- 大标题 + 小标题 -->
+        <div class="header">
+            <h1 class="main-title">志愿盲盒</h1>
+            <p class="sub-title">中国传媒大学25届视觉传达小组作业</p >
+        </div>
+
+        <!-- 顶部大横幅图片展示区 -->
+        <div class="top-banner" id="banner">
+            <span class="placeholder-text">图片展示区域</span>
+        </div>
+
+        <!-- 中间区域：左侧4个小方块 + 右侧长条 -->
+        <div class="middle-section">
+            <div class="left-small-images">
+                <div class="small-image-item" id="img1">
+                    <span class="placeholder-text">图1</span>
+                </div>
+                <div class="small-image-item" id="img2">
+                    <span class="placeholder-text">图2</span>
+                </div>
+                <div class="small-image-item" id="img3">
+                    <span class="placeholder-text">图3</span>
+                </div>
+                <div class="small-image-item" id="img4">
+                    <span class="placeholder-text">图4</span>
+                </div>
+            </div>
+            <div class="right-long-image" id="img-long">
+                <span class="placeholder-text">图片<br>展示区</span>
+            </div>
+        </div>
+
+        <!-- 底部文字展示卡片 -->
+        <div class="bottom-section">
+            <div class="text-card">
+                <div class="card-title">成员介绍</div>
+                <div class="card-desc">
+                    组长：XXX<br>
+                    视觉设计：XXX<br>
+                    文案策划：XXX<br>
+                    指导老师：XXX
+                </div>
+            </div>
+
+            <div class="text-card">
+                <div class="card-title">设计理念</div>
+                <div class="card-desc">
+                    本课题旨在探索"盲盒"文化背后的随机性与未知惊喜，结合视觉传达设计语言，打破传统排版界限，构建具有强烈视觉冲击力的展示空间。
+                </div>
+            </div>
+
+            <div class="text-card">
+                <div class="card-title">技术栈</div>
+                <div class="card-desc">
+                    Adobe Photoshop / Illustrator<br>
+                    Figma / Sketch<br>
+                    HTML / CSS
+                </div>
+            </div>
+
+            <div class="text-card">
+                <div class="card-title">联系方式</div>
+                <div class="card-desc">
+                    邮箱：group25@cuc.edu.cn<br>
+                    地址：中国传媒大学视觉传达实验室
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 志愿盲盒 | 中国传媒大学25届视觉传达小组作业
+        </footer>
+
+    </div>
+
+    <script>
+        // 图片替换说明：
+        // 当你有图片后，可以通过以下方式替换：
+        // 1. 把图片放到同一个文件夹
+        // 2. 在JS里或者直接在HTML里把 <span> 替换成 < img src="你的图片名.jpg">
+        // 例如：document.getElementById("banner").innerHTML = '< img src="banner.jpg">';
+
+        // 示例：如果你想用JS替换图片，取消下面的注释并修改路径
+        /*
+        document.getElementById("banner").innerHTML = '< img src="banner.jpg" alt="顶部大图">';
+        document.getElementById("img1").innerHTML = '< img src="img1.jpg" alt="图1">';
+        document.getElementById("img2").innerHTML = '< img src="img2.jpg" alt="图2">';
+        document.getElementById("img3").innerHTML = '< img src="img3.jpg" alt="图3">';
+        document.getElementById("img4").innerHTML = '< img src="img4.jpg" alt="图4">';
+        document.getElementById("img-long").innerHTML = '< img src="long.jpg" alt="长条图">';
+        */
+    </script>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
