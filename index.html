@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>志愿盲盒</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>志愿盲盒 - 中国传媒大学25届视觉传达小组作业</title>
     <style>
         * {
             margin: 0;
@@ -16,173 +12,138 @@
         }
 
         body {
-            background-color: #f0f0f0;
-            font-family: "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
-            padding: 15px;
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* 标题区域 */
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-            padding-top: 20px;
-        }
-
-        .main-title {
-            font-size: 36px;
-            font-weight: 900;
-            color: #1a1a1a;
-            letter-spacing: 6px;
-            margin-bottom: 8px;
-        }
-
-        .sub-title {
-            font-size: 13px;
-            color: #888;
-            letter-spacing: 2px;
-            font-weight: 400;
-        }
-
-        /* 顶部大横幅图片展示区 */
-        .top-banner {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background-color: #1a1a1a;
-            border-radius: 16px;
-            margin-bottom: 15px;
+        /* 顶部图片展示区 */
+        .top-section {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            font-size: 15px;
-            overflow: hidden;
-        }
-
-        .top-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* 中间区域：左侧小图 + 右侧长条 */
-        .middle-section {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 15px;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .left-small-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
         }
 
         .small-image-item {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: #1a1a1a;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            min-height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #444;
-            font-size: 11px;
-            overflow: hidden;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .small-image-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .small-image-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
         }
 
         .right-long-image {
-            width: 140px;
-            background-color: #1a1a1a;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            flex: 1;
+            min-height: 380px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #444;
-            font-size: 12px;
-            overflow: hidden;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .right-long-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .right-long-image:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
         }
 
-        /* 底部文字展示区 */
+        .placeholder-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* 底部文字展示卡片 */
         .bottom-section {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             margin-bottom: 30px;
         }
 
         .text-card {
-            width: 100%;
-            padding: 18px 20px;
-            background-color: #1a1a1a;
-            border-radius: 12px;
-            color: #fff;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .text-card .card-title {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #fff;
+        .text-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .text-card .card-desc {
-            font-size: 12px;
-            color: #999;
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #555;
             line-height: 1.8;
         }
 
         /* 页脚 */
         footer {
             text-align: center;
-            padding: 20px 0 30px;
-            color: #bbb;
-            font-size: 11px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            padding: 20px;
         }
 
-        /* 占位符文字样式 */
-        .placeholder-text {
-            color: #444;
-            font-size: 12px;
-            text-align: center;
-            padding: 5px;
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .top-section {
+                flex-direction: column;
+            }
+
+            .bottom-section {
+                grid-template-columns: 1fr;
+            }
+
+            .left-small-images {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-
-        <!-- 大标题 + 小标题 -->
-        <div class="header">
-            <h1 class="main-title">志愿盲盒</h1>
-            <p class="sub-title">中国传媒大学25届视觉传达小组作业</p >
-        </div>
-
-        <!-- 顶部大横幅图片展示区 -->
-        <div class="top-banner" id="banner">
-            <span class="placeholder-text">图片展示区域</span>
-        </div>
-
-        <!-- 中间区域：左侧4个小方块 + 右侧长条 -->
-        <div class="middle-section">
+        <!-- 顶部图片展示区 -->
+        <div class="top-section">
             <div class="left-small-images">
                 <div class="small-image-item" id="img1">
                     <span class="placeholder-text">图1</span>
@@ -242,30 +203,10 @@
         <footer>
             © 2025 志愿盲盒 | 中国传媒大学25届视觉传达小组作业
         </footer>
-
     </div>
 
     <script>
-        // 图片替换说明：
-        // 当你有图片后，可以通过以下方式替换：
-        // 1. 把图片放到同一个文件夹
-        // 2. 在JS里或者直接在HTML里把 <span> 替换成 < img src="你的图片名.jpg">
-        // 例如：document.getElementById("banner").innerHTML = '< img src="banner.jpg">';
-
-        // 示例：如果你想用JS替换图片，取消下面的注释并修改路径
-        /*
-        document.getElementById("banner").innerHTML = '< img src="banner.jpg" alt="顶部大图">';
-        document.getElementById("img1").innerHTML = '< img src="img1.jpg" alt="图1">';
-        document.getElementById("img2").innerHTML = '< img src="img2.jpg" alt="图2">';
-        document.getElementById("img3").innerHTML = '< img src="img3.jpg" alt="图3">';
-        document.getElementById("img4").innerHTML = '< img src="img4.jpg" alt="图4">';
-        document.getElementById("img-long").innerHTML = '< img src="long.jpg" alt="长条图">';
-        */
+        // 预留脚本区域，可在此添加交互功能
     </script>
-</body>
-</html></title>
-</head>
-<body>
-
 </body>
 </html>
